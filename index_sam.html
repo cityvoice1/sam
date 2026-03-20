@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Title updated from Sam Woodgate to Sam's Trading Edge -->
+  <title>Sam's Trading Edge · Forex & Crypto · 8+ years</title>
+  <!-- Font & base styling -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #ffffff;
+      color: #1e1e1e;
+      line-height: 1.6;
+    }
+
+    /* NEW COLOR PALETTE: navy & skyblue */
+    :root {
+      --navy: #0a192f;        /* deep navy */
+      --navy-light: #1f3a5f;
+      --skyblue: #7ec8e0;     /* soft skyblue */
+      --skyblue-dark: #5fa3b5;
+      --skyblue-light: #e2f0f9;
+      --white: #ffffff;
+      --off-white: #f5faff;
+      --soft-border: #cde1ed;
+      --text-dark: #0b1c2e;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* ----- HEADER (sticky, navy border) ----- */
+    header {
+      background-color: var(--white);
+      box-shadow: 0 4px 12px rgba(10, 25, 47, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 2px solid var(--navy);
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      height: 76px;
+    }
+
+    .logo a {
+      font-size: 1.7rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      text-decoration: none;
+      border-left: none;
+      padding-left: 0;
+      line-height: 1.2;
+    }
+
+    /* ----- sections general ----- */
+    section {
+      padding: 5.5rem 0;
+    }
+
+    section:nth-of-type(even) {
+      background-color: var(--off-white);
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+      position: relative;
+    }
+
+    h2:after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 4px;
+      background: var(--skyblue);
+      margin-top: 0.5rem;
+      border-radius: 4px;
+    }
+
+    /* ----- HERO / HOME  (skyblue tint) with profile image ----- */
+    .hero {
+      padding: 7rem 0 6rem 0;
+      background: linear-gradient(135deg, #e8f4fc 0%, #ffffff 80%);
+      text-align: center;
+    }
+
+    .hero-image {
+      margin-bottom: 2rem;
+    }
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--skyblue);
+      box-shadow: 0 10px 25px rgba(10, 25, 47, 0.2);
+      transition: transform 0.3s ease;
+    }
+    .profile-img:hover {
+      transform: scale(1.02);
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--navy);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero .highlight {
+      color: var(--navy);
+      background: var(--skyblue-light);
+      padding: 0.2rem 0.8rem;
+      display: inline-block;
+      border-radius: 40px;
+      font-weight: 600;
+      border: 1px solid var(--skyblue);
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: 0 auto 1.8rem;
+      color: #2b4b6f;
+      font-weight: 300;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2.2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--navy);
+      color: white;
+      padding: 0.9rem 2.8rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border: 2px solid transparent;
+      transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+      box-shadow: 0 4px 10px rgba(10, 25, 47, 0.3);
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: var(--navy-light);
+      box-shadow: 0 8px 16px rgba(126, 200, 224, 0.4);
+      transform: scale(1.02);
+    }
+
+    .btn-sky {
+      background-color: var(--skyblue);
+      color: var(--navy);
+      box-shadow: 0 4px 10px rgba(126, 200, 224, 0.4);
+    }
+
+    .btn-sky:hover {
+      background-color: var(--skyblue-dark);
+      color: white;
+      box-shadow: 0 8px 16px rgba(126, 200, 224, 0.6);
+    }
+
+    /* ----- WHAT I OFFER section (cards with navy border-left) ----- */
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .offer-item {
+      background: var(--white);
+      padding: 1.8rem 1.5rem;
+      border-radius: 24px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+      border: 1px solid var(--soft-border);
+      border-left: 6px solid var(--skyblue);
+      transition: transform 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .offer-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(10, 25, 47, 0.1);
+    }
+
+    .offer-icon {
+      font-size: 2.2rem;
+      line-height: 1;
+      min-width: 2.8rem;
+      text-align: center;
+    }
+
+    .offer-item h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 0;
+    }
+
+    .mission {
+      background: var(--skyblue-light);
+      padding: 2.5rem 3rem;
+      border-radius: 40px;
+      text-align: center;
+      border: 1px solid var(--skyblue);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+    }
+
+    .mission p {
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--navy);
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .mission p::first-line {
+      font-weight: 500;
+      color: var(--navy-light);
+    }
+
+    /* ----- TESTIMONIALS (5 cards with stars) ----- */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      padding: 2rem 1.8rem;
+      border-radius: 24px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+      transition: all 0.2s;
+      border: 1px solid var(--soft-border);
+      border-bottom: 5px solid var(--navy);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 30px -8px rgba(10, 25, 47, 0.15);
+    }
+
+    .stars {
+      color: #f5b342; /* gold */
+      font-size: 1.4rem;
+      letter-spacing: 3px;
+      margin-bottom: 0.8rem;
+      line-height: 1;
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      color: #1f3a4f;
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+      flex: 1;
+    }
+
+    .testimonial-card .author {
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.3px;
+      border-top: 1px dashed #bfd9ec;
+      padding-top: 1rem;
+      margin-top: auto;
+    }
+
+    /* ----- CONTACT (text only: US address, email, phone) ----- */
+    .contact-info-simple {
+      max-width: 700px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 3rem 2.8rem;
+      border-radius: 32px;
+      box-shadow: 0 25px 40px -18px rgba(0,0,0,0.15);
+      border: 1px solid var(--soft-border);
+      text-align: center;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      font-size: 1.2rem;
+      color: var(--navy);
+      background: var(--skyblue-light);
+      padding: 1rem 2rem;
+      border-radius: 60px;
+      border: 1px solid var(--skyblue);
+      word-break: break-word;
+      text-align: left;
+    }
+
+    .contact-detail span {
+      font-weight: 500;
+    }
+
+    .contact-icon {
+      font-size: 1.8rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .address-block {
+      background: transparent;
+      border: 1px dashed var(--navy);
+      background: #fafdff;
+    }
+
+    /* ----- FOOTER navy ----- */
+    footer {
+      background-color: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 2rem;
+    }
+
+    footer p {
+      color: #d2e6f5;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* ----- MODAL POPUPS (navy & skyblue) ----- */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(10, 25, 47, 0.4);
+      backdrop-filter: blur(3px);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background-color: var(--white);
+      margin: auto;
+      padding: 2.5rem 2.8rem;
+      border-radius: 40px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 30px 50px rgba(10, 25, 47, 0.3);
+      border: 3px solid var(--navy);
+      position: relative;
+      text-align: center;
+    }
+
+    .modal-content h3 {
+      font-size: 2rem;
+      color: var(--navy);
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+    }
+
+    .modal-content p {
+      font-size: 1.2rem;
+      color: #1e3b4f;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .modal-contact {
+      background: var(--skyblue-light);
+      padding: 1.2rem;
+      border-radius: 28px;
+      margin: 1.8rem 0;
+      border: 1px solid var(--skyblue);
+    }
+
+    .modal-contact p {
+      margin: 0.3rem 0;
+      font-size: 1.1rem;
+      color: var(--navy);
+    }
+
+    .modal-btn-link {
+      display: inline-block;
+      background-color: var(--skyblue);
+      color: var(--navy);
+      border: none;
+      padding: 0.8rem 2.2rem;
+      border-radius: 40px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      box-shadow: 0 4px 10px rgba(126, 200, 224, 0.4);
+      margin: 0.5rem 0 1rem;
+      border: 2px solid transparent;
+    }
+
+    .modal-btn-link:hover {
+      background-color: var(--skyblue-dark);
+      color: white;
+    }
+
+    .close-btn {
+      background-color: var(--skyblue);
+      color: var(--navy);
+      border: none;
+      padding: 0.8rem 2.2rem;
+      border-radius: 40px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      box-shadow: 0 4px 10px rgba(126, 200, 224, 0.4);
+      margin-top: 1rem;
+    }
+
+    .close-btn:hover {
+      background-color: var(--skyblue-dark);
+      color: white;
+    }
+
+    .modal-close-icon {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      color: var(--navy);
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .modal-close-icon:hover {
+      color: var(--skyblue);
+    }
+
+    /* ----- responsive adjustments ----- */
+    @media (max-width: 700px) {
+      .offer-grid {
+        grid-template-columns: 1fr;
+      }
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      .mission {
+        padding: 2rem 1.5rem;
+      }
+      .mission p {
+        font-size: 1.2rem;
+      }
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+      .modal-content {
+        padding: 2rem 1.5rem;
+      }
+      .contact-detail {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1.5rem;
+        text-align: center;
+      }
+      .profile-img {
+        width: 140px;
+        height: 140px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      h2 { font-size: 2.2rem; }
+      .hero h1 { font-size: 2.8rem; }
+    }
+
+    @media (max-width: 700px) {
+      header .container {
+        height: auto;
+        padding: 1rem 0;
+        justify-content: center;
+      }
+      .logo a {
+        font-size: 2rem;
+        border-left: none;
+        padding-left: 0;
+        margin-bottom: 0.4rem;
+      }
+      .hero { padding: 5rem 0; }
+      .hero h1 { font-size: 2.5rem; }
+      .contact-info-simple { padding: 2rem 1.5rem; }
+    }
+
+    @media (max-width: 450px) {
+      section { padding: 4rem 0; }
+      h2 { font-size: 2rem; }
+      .hero h1 { font-size: 2.1rem; }
+      .offer-item { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo"><a href="#home">Sam's Trading Edge</a></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME section with profile image -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-image">
+          <img src="https://i.imgur.com/ChfAbTO.jpeg" alt="Sam Woodgate, founder of Sam's Trading Edge" class="profile-img">
+        </div>
+        <h1>Independent Forex broker<br>& crypto trader <span class="highlight">since 2015</span></h1>
+        <p>8+ years navigating the markets. I combine technical discipline with a calm, long‑term view, helping others understand the rhythm of currencies and crypto.</p>
+        
+        <p>I have managed over $4.2M in client portfolios, grown my own account from $2K to $120K in 18 months, and trained hundreds of traders across the U.S, U.K, Kenya, Nigeria and South Africa.</p>
+        <p>I specialize in low-risk, high-efficiency trading , using technical analysis, real-time execution, and a custom Fibonacci & RSI system with 80% accuracy.</p>
+        <p>My focus is capital preservation, consistent growth, and spotting early opportunities in both Forex and crypto markets like Bitcoin, Ethereum, and Solana.</p>
+
+        <div class="hero-buttons">
+          <a href="#" id="vipGroupBtn" class="btn">Start Learning Here</a>
+          <a href="#" id="freeBitcoinBtn" class="btn btn-sky">Get Free Bitcoin Here</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT I OFFER -->
+    <section id="offer">
+      <div class="container">
+        <h2>What I Offer</h2>
+        <div class="offer-grid">
+          <div class="offer-item">
+            <span class="offer-icon">📈</span>
+            <h3>One-on-one trading mentorship</h3>
+          </div>
+          <div class="offer-item">
+            <span class="offer-icon">📊</span>
+            <h3>Daily trade signal sharing</h3>
+          </div>
+          <div class="offer-item">
+            <span class="offer-icon">📋</span>
+            <h3>Portfolio audits for beginner investors</h3>
+          </div>
+          <div class="offer-item">
+            <span class="offer-icon">🔐</span>
+            <h3>Crypto wallet setup and risk education</h3>
+          </div>
+          <div class="offer-item">
+            <span class="offer-icon">💬</span>
+            <h3>Real-time strategy sessions via Zoom or Telegram</h3>
+          </div>
+        </div>
+        <div class="mission">
+          <p>My mission is simple: help more people achieve financial freedom through trading, just like I did — one chart, one candle, and one smart decision at a time.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <div class="container">
+        <h2>Testimonials</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>“Sam’s market insights have been invaluable. He explains complex setups in plain English and his risk discipline is rock solid. A trustworthy partner in a volatile space.”</p>
+            <div class="author">— Elena V., private investor</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>“I started trading crypto thanks to Sam’s mentoring. He doesn’t just give signals – he teaches you how to think. My portfolio is healthier because of him.”</p>
+            <div class="author">— Marcus T., crypto enthusiast</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>“As a fellow broker, I respect Sam’s integrity and deep knowledge of both Forex and digital assets. He’s the person I recommend to friends who want real, no‑hype guidance.”</p>
+            <div class="author">— Nadia K., Forex advisor</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>“Sam helped me navigate the 2023 volatility with a cool head. His trade ideas are always backed by solid reasoning, never empty promises.”</p>
+            <div class="author">— David L., independent trader</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>“Sam’s risk management framework saved me from major drawdowns during the crypto crash. He doesn’t just chase profits; he protects capital.”</p>
+            <div class="author">— Carlos R., full-time trader</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT section – text only (email updated) -->
+    <section id="contact">
+      <div class="container">
+        <h2>Contact me</h2>
+        <div class="contact-info-simple">
+          <div class="contact-detail address-block">
+            <span class="contact-icon">📍</span>
+            <span>401 Elm St Suite 270, Cincinnati, OH 45202</span>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-icon">✉️</span>
+            <span>sam@samwoodgate.com</span>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-icon">📞</span>
+            <span>800-821-2680</span>
+          </div>
+          <p style="margin-top: 2rem; color: var(--navy); font-weight: 300;">available for consultations & mentorship</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <!-- Updated footer to include All rights reserved -->
+      <p>© 2026 Sam's Trading Edge. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL for VIP Group (email updated) -->
+  <div id="vipModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close-icon" id="closeVipModalIcon">&times;</span>
+      <h3>Join VIP Group</h3>
+      <p>Get my proven strategies for a one-time $500 fee, backed by a 7-Day Money-Back Guarantee.</p>
+      <div class="modal-contact">
+        <p>📧 sam@samwoodgate.com</p>
+        <p>📞 800-821-2680</p>
+      </div>
+      <button class="close-btn" id="closeVipModalBtn">Close</button>
+    </div>
+  </div>
+
+  <!-- MODAL for Bangade (free bitcoin) -->
+  <div id="bangadeModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close-icon" id="closeBangadeModalIcon">&times;</span>
+      <h3>🚀 Join Bangade – Free Crypto Mining</h3>
+      <p>You can mine between <strong>$150 and $1200</strong> worth of cryptocurrency directly into your wallet. Start your mining journey today with zero cost — simply and securely.</p>
+      <a href="https://bangade.42web.io" class="modal-btn-link" target="_blank" rel="noopener noreferrer">👉 Visit Bangade</a>
+      <div style="margin-top: 1rem;">
+        <button class="close-btn" id="closeBangadeModalBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for modals and smooth scroll -->
+  <script>
+    (function() {
+      const headerHeight = document.querySelector('header').offsetHeight;
+      
+      // Smooth scroll for logo and any hash links (excluding buttons with custom handlers)
+      document.querySelectorAll('a[href^="#"]:not(#vipGroupBtn):not(#freeBitcoinBtn)').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+              top: elementPosition - headerHeight,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // --- VIP Modal ---
+      const vipModal = document.getElementById('vipModal');
+      const vipBtn = document.getElementById('vipGroupBtn');
+      const closeVipBtn = document.getElementById('closeVipModalBtn');
+      const closeVipIcon = document.getElementById('closeVipModalIcon');
+
+      function openVipModal(e) {
+        e.preventDefault();
+        vipModal.style.display = 'flex';
+      }
+      function closeVipModal() {
+        vipModal.style.display = 'none';
+      }
+
+      vipBtn.addEventListener('click', openVipModal);
+      closeVipBtn.addEventListener('click', closeVipModal);
+      closeVipIcon.addEventListener('click', closeVipModal);
+
+      // --- Bangade Modal ---
+      const bangadeModal = document.getElementById('bangadeModal');
+      const freeBitcoinBtn = document.getElementById('freeBitcoinBtn');
+      const closeBangadeBtn = document.getElementById('closeBangadeModalBtn');
+      const closeBangadeIcon = document.getElementById('closeBangadeModalIcon');
+
+      function openBangadeModal(e) {
+        e.preventDefault();          // prevent any default link behaviour
+        bangadeModal.style.display = 'flex';
+      }
+      function closeBangadeModal() {
+        bangadeModal.style.display = 'none';
+      }
+
+      freeBitcoinBtn.addEventListener('click', openBangadeModal);
+      closeBangadeBtn.addEventListener('click', closeBangadeModal);
+      closeBangadeIcon.addEventListener('click', closeBangadeModal);
+
+      // Close modals if user clicks outside content
+      window.addEventListener('click', function(event) {
+        if (event.target === vipModal) {
+          vipModal.style.display = 'none';
+        }
+        if (event.target === bangadeModal) {
+          bangadeModal.style.display = 'none';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
